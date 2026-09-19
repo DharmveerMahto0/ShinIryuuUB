@@ -102,7 +102,7 @@ async def del_msg(client, message: Message):
             await message.delete()
     except Exception as e:
         await message.edit_text(f"Failed: {e}")
-      @app.on_message(filters.me & filters.command("purge", prefixes=""))
+@app.on_message(filters.me & filters.command("purge", prefixes=""))
 async def purge(client, message: Message):
     if not message.reply_to_message:
         return await message.edit_text("Reply to a message to start purge from there.")
